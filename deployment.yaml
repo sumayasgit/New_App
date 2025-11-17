@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mon-app-deployment
+  name: new-app-deployment
 spec:
-  replicas: 2
+  replicas: 2  # Nombre de réplicas de votre application
   selector:
     matchLabels:
-      app: mon-app
+      app: new-app
   template:
     metadata:
       labels:
-        app: mon-app
+        app: new-app
     spec:
       containers:
-        - name: mon-app
-          image: dockerraziza/mon-app
+        - name: new-app
+          image: dockerraziza/New_app  # Le nom de l'image Docker
           ports:
-            - containerPort: 80
+            - containerPort: 80  # Port de l'application exposé
