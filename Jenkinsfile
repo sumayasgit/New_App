@@ -7,7 +7,8 @@ pipeline {
     stages {
         stage('Cloner le dépôt') {
             steps {
-                git 'https://github.com/AzizaNagara/New_app.git'  // Utilisez votre repo Git
+                // Spécifier explicitement la branche main pour le clonage
+                git branch: 'main', url: 'https://github.com/AzizaNagara/New_app.git'
             }
         }
         stage('Construire l\'image Docker') {
@@ -39,3 +40,4 @@ pipeline {
         }
     }
 }
+
